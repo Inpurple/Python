@@ -165,8 +165,7 @@ str = '.join(str)
 19. Python 字符串大小写转换
 
 以下代码演示了如何将字符串转换为大写字母，或者将字符串转为小写字母等：
-# Filename : test.py
-# author by : www.runoob.com
+
 
 str = "www.runoob.com"
 print(str.upper())          # 把所有字符中的小写字母转换成大写字母
