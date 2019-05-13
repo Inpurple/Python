@@ -184,3 +184,19 @@ print(str.title())          # 把每个单词的第一个字母转化为大写�
 20.Python中可以用如下方式表示正负无穷：
 float("inf"), float("-inf")
 
+21.Python split()方法
+Python 字符串 Python 字符串
+
+描述
+Python split() 通过指定分隔符对字符串进行切片，如果参数 num 有指定值，则分隔 num+1 个子字符串
+
+语法
+split() 方法语法：
+
+str.split(str="", num=string.count(str)).
+
+参数
+str -- 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。
+num -- 分割次数。默认为 -1, 即分隔所有。
+返回值
+返回分割后的字符串列表。
