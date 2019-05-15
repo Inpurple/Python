@@ -212,4 +212,42 @@ sys.setrecursionlimit(100000) #例如这里设置为十万
 结语
 这个解决方法并不治本，还需要在代码上进行优化。我出现这个错误的原因是忽略了对爬取页面的异常值处理，在增加判断之后，递归深度一般达不到python的默认限制。
 
+23.Python 排序---sort与sorted学习
+当我们从数据库中获取一写数据后，一般对于列表的排序是经常会遇到的问题，今天总结一下python对于列表list排序的常用方法：
 
+第一种：内建方法sort()
+可以直接对列表进行排序
+
+用法：
+
+list.sort(func=None, key=None, reverse=False(or True))
+
+对于reverse这个bool类型参数，当reverse=False时：为正向排序；当reverse=True时：为方向排序。默认为False。
+执行完后会改变原来的list，如果你不需要原来的list，这种效率稍微高点
+为了避免混乱，其会返回none
+例如：
+
+>>> list = [2,8,4,6,9,1,3]
+>>> list.sort()
+>>> list
+[1, 2, 3, 4, 6, 8, 9]
+ 
+
+第二种：内建函数sorted()
+这个和第一种的差别之处在于：
+
+sorted()不会改变原来的list，而是会返回一个新的已经排序好的list
+list.sort()方法仅仅被list所定义，sorted()可用于任何一个可迭代对象
+用法：
+
+sorted(list)
+
+该函数也含有reverse这个bool类型的参数，当reverse=False时：为正向排序(从小到大)；当reverse=True时：为反向排序(从大到小)。当然默认为False。
+执行完后会有返回一个新排序好的list
+例如：
+
+>>> list = [2,8,4,1,5,7,3]
+>>> other = sorted(list)
+>>> other
+[1, 2, 3, 4, 5, 7, 8]
+ 
