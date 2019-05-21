@@ -300,3 +300,14 @@ print(list(reversed(bb)))
 
 [7, 5, 3, 1]
 
+25.dic.get()方法
+get() 方法语法：
+
+D.get(key[,default=None])
+参数
+key -- 字典中要查找的键。
+default -- 可选参数，如果指定键的值不存在时，返回该值，默认为 None。
+返回值
+返回指定键的值，如果指定键的值不在字典中返回指定值，默认为 None。
+
+
