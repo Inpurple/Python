@@ -1,22 +1,22 @@
 Python 高效语法总结 
 ====
 
-## 1.Python continue 语句<br> 
+### 1.Python continue 语句<br> 
 continue 语句跳出本次循环，而break跳出整个循环。 
 continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。
 continue 语句用在while和for循环中。
 
-## 2.	带索引的列表迭代 enumerate()  <br>  
+### 2.	带索引的列表迭代 enumerate()<br>  
 列表：<br>  
 ```python
 teams=["Parkers","49ers","Ravens","Patriots"]
 for index,team in enumerate(teams):
     print(index,team)
 ```
-    0 Parkers
-    1 49ers
-    2 Ravens
-    3 Patriots
+>0 Parkers
+>1 49ers
+>2 Ravens
+>3 Patriots
  
 字典：对键和值都进行遍历<br>  
 如果只需要值，可以使用d.values()，如果想获取所有的键则可以使用d.keys()。
@@ -31,25 +31,29 @@ name3: "com"
 for key, value in d.items():
     print (key, ' value : ', value)
 ```
-    name1 value : pythontab<br>  
-    name2 value : .<br> 
-    name3 value : com<br> 
+>name1 value : pythontab<br>  
+>name2 value : .<br> 
+>name3 value : com<br> 
 
-3.	Python标准库网址<br> 
+### 3.	Python标准库网址<br> 
 https://docs.python.org/zh-cn/3/library/index.html
 
-4.	Python中的浅拷贝和深拷贝
-Python的切片操作是是浅拷贝
-浅拷贝
->>> import copy
->>> a = [1, 2, 3, [5, 6]]
->>> b = copy.copy(a)
->>> print b
-[1, 2, 3, [5, 6]]
->>> a[3].append('c')
->>> print b
-[1, 2, 3, [5, 6, 'c']]
-深拷贝
+### 4.	Python中的浅拷贝和深拷贝<br> 
+Python的切片操作是是浅拷贝<br> 
+#### 浅拷贝
+```python
+import copy
+a = [1, 2, 3, [5, 6]]
+b = copy.copy(a)
+print b
+```
+>[1, 2, 3, [5, 6]]
+```python
+a[3].append('c')
+print b
+```
+>[1, 2, 3, [5, 6, 'c']]
+#### 深拷贝
 >>> a = [1, 2, 3, [5, 6]]
 >>> b = copy.deepcopy(a)
 >>> a[3].append('c')
