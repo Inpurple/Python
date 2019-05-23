@@ -127,13 +127,13 @@ count：替换的次数，默认为0，不填表示全局替换<br>
 设想一本英语字典里的单词，何者在前何者在后？<br> 
 显然的做法是先按照第一个字母、以 a、b、c……z 的顺序排列；如果第一个字母一样，那么比较第二个、第三个乃至后面的字母。如果比到最后两个单词不一样长（比如，sigh 和 sight），那么把短者排在前。<br>
 通过这种方法，我们可以给本来不相关的单词强行规定出一个顺序。“单词”可以看作是“字母”的字符串，而把这一点推而广之就可以认为是给对应位置元素所属集合分别相同的各个有序多元组规定顺序。
-
 ### 12.	python 字符相减得到数字
 python中没有字符之间的直接相减运算，但可以通过ord()函数实现 
 ord()函数主要用来返回对应字符的ascii码
->>> ord('9')-ord('0')
-9
-
+```python
+ord('9')-ord('0')
+```
+    9
 ### 13.	如何删除二维数组的列
 ```python
 import numpy as np
@@ -172,11 +172,12 @@ print(pattern[1:])—None<br>
 print(pattern[1])---提示超出索引<br>
 
 ### 16.python list中方法的时间复杂度
-Operation | Big-O Efficiency
-- | :-: | -: 
-index [] | O(1)
-index assignment | O(1)
-append | O(1)
+|Operation|Big-O Efficiency|
+|:---|:---|
+|列1的内容1|列2的内容1|
+|index [] | O(1)|
+|index assignment | O(1)|
+|append | O(1)|
 pop() | O(1)
 pop(i) | O(n)
 insert(i,item) | O(n)
