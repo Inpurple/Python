@@ -1,22 +1,22 @@
 Python 高效语法总结 
 ====
 
-### 1.Python continue 语句<br> 
+### 1.Python continue 语句
 continue 语句跳出本次循环，而break跳出整个循环。 
 continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。
 continue 语句用在while和for循环中。
 
-### 2.	带索引的列表迭代 enumerate()<br>  
+### 2.	带索引的列表迭代 enumerate() 
 列表：<br>  
 ```python
 teams=["Parkers","49ers","Ravens","Patriots"]
 for index,team in enumerate(teams):
     print(index,team)
 ```
->0 Parkers
->1 49ers
->2 Ravens
->3 Patriots
+    0 Parkers
+    1 49ers
+    2 Ravens
+    3 Patriots
  
 字典：对键和值都进行遍历<br>  
 如果只需要值，可以使用d.values()，如果想获取所有的键则可以使用d.keys()。
@@ -31,11 +31,11 @@ name3: "com"
 for key, value in d.items():
     print (key, ' value : ', value)
 ```
->name1 value : pythontab<br>  
->name2 value : .<br> 
->name3 value : com<br> 
+    name1 value : pythontab<br>  
+    name2 value : .<br> 
+    name3 value : com<br> 
 
-### 3.	Python标准库网址<br> 
+### 3.	Python标准库网址
 https://docs.python.org/zh-cn/3/library/index.html
 
 ### 4.	Python中的浅拷贝和深拷贝<br> 
@@ -47,26 +47,28 @@ a = [1, 2, 3, [5, 6]]
 b = copy.copy(a)
 print b
 ```
->[1, 2, 3, [5, 6]]
+    [1, 2, 3, [5, 6]]
 ```python
 a[3].append('c')
 print b
 ```
->[1, 2, 3, [5, 6, 'c']]
+    [1, 2, 3, [5, 6, 'c']]
 #### 深拷贝
->>> a = [1, 2, 3, [5, 6]]
->>> b = copy.deepcopy(a)
->>> a[3].append('c')
->>> print b
-[1, 2, 3, [5, 6]]
-拷贝即是开辟一块新的内存空间，把被拷贝对象中的值复制过去。而浅拷贝并没有为子对象[5,6]开辟一块新的内存空间，而仅仅是实现对a中[5，6]的引用。所以改变a中[5，6]的值，b中的值也会发生变化。
-深拷贝则是为子对象也开辟了一块新空间。所以改变a中[5, 6]的值，并不影响b
+```python
+a = [1, 2, 3, [5, 6]]
+b = copy.deepcopy(a)
+a[3].append('c')
+print b
+```
+    [1, 2, 3, [5, 6]]
+拷贝即是开辟一块新的内存空间，把被拷贝对象中的值复制过去。而浅拷贝并没有为子对象[5,6]开辟一块新的内存空间，而仅仅是实现对a中[5，6]的引用。所以改变a中[5，6]的值，b中的值也会发生变化。深拷贝则是为子对象也开辟了一块新空间。所以改变a中[5, 6]的值，并不影响b
 
-5.	python根据某个值获得一维列表和二维列表的索引值
-#一维列表  
-L1 = [1,2,3,4,5,6,7,8,9,10]  
-#二维列表  
-L2 = [[1,1],[2,2],[3,3],[4,4],[5,5]]  
+### 5.	python根据某个值获得一维列表和二维列表的索引值
+
+```python
+L1 = [1,2,3,4,5,6,7,8,9,10]  #一维列表  
+
+L2 = [[1,1],[2,2],[3,3],[4,4],[5,5]]  #二维列表  
 
 def getOneDimensionListIndex(L,value):  
 """获得一维列表某个值的索引值"""  
@@ -81,6 +83,7 @@ def getTwoDimensionListIndex(L,value):
 data = [data for data in L if data[0]==value] #data=[(53, 1016.1)]  
 index = L.index(data[0])  
 return index
+
 #获得二维列表某个值的一维索引值的另一种方法
 def getTwoDimensionListIndex(L,value):  
     """获得二维列表某个值的一维索引值的另一种方法"""  
@@ -88,11 +91,10 @@ def getTwoDimensionListIndex(L,value):
         for j in range(len(L[i])):  
             if L[i][j] == value  
             index = i 
-
-
+```
 s.index(x[, i[, j]])	x 在 s 中首次出现项的索引号（索引号在 i 或其后且在 j 之前）
 
-6.	不同于我用过的其它编程语言，Python 没有 switch / case 语句。为了实现它，我们可以使用字典映射：
+### 6.	不同于我用过的其它编程语言，Python 没有 switch / case 语句。为了实现它，我们可以使用字典映射：
 
 7.	Python中可以当做key值的数据类型：
 所以所有python自带类型中，除了list、dict、set和内部至少带有上述三种类型之一的tuple之外，其余的对象都能当key
