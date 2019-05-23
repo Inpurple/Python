@@ -172,6 +172,7 @@ print(pattern[1:])—None<br>
 print(pattern[1])---提示超出索引<br>
 
 ### 16.python list中方法的时间复杂度
+#### list
 |Operation|Big-O Efficiency|
 |:---|:---|
 |列1的内容1|列2的内容1|
@@ -192,23 +193,44 @@ concatenate | O(k)
 sort | O(n log n)
 multiply | O(nk)
 
+#### dic
+
+|操作|平均情况|最坏情况|
+|:---|:---|
+复制|O(n)|O(n)
+取元素|O(1)|O(n)
+更改元素|O(1)|O(n)
+删除元素|O(1)|O(n)
+遍历|O(n)|O(n)
+
+#### set
+|操作|平均情况|最坏情况|
+|:---|:---|
+x in s|O(1)|O(n)
+并集|s|t|O(len(s)+len(t))	 
+交集|s&t|O(min(len(s), len(t))|O(len(s) * len(t))
+差集|s-t|O(len(s))	 
+s.difference_update(t)|O(len(t))	 
+对称差集 s^t|O(len(s))|O(len(s) * len(t))
+s.symmetric_difference_update(t)|O(len(t))|O(len(t) * len(s))
+
 ### 17. python ‘//’ 取整，‘%’ 取余
->>> 2/2   除法<br>  
+2/2   除法<br>  
 1.0<br>  
->>> 2//2  取整<br>  
+2//2  取整<br>  
 1<br>  
->>> 1/2   除法<br>  
+1/2   除法<br>  
 0.5<br>  
->>> 1//2  取整<br>  
+1//2  取整<br>  
 0<br>  
->>> 3//2  取整<br>  
+3//2  取整<br>  
 1<br>  
->>> 3%2  取余<br>  
+3%2  取余<br>  
 1<br>  
->>> 4%2  取余<br>  
+4%2  取余<br>  
 0<br>  
 
-### 18.list与str的呼唤
+### 18.list与str的转换
 对python 字符串中指定位置的字符做修改操作：<br>  
 ```python
 str = list(str)
@@ -226,7 +248,9 @@ print(str.title())          # 把每个单词的第一个字母转化为大写�
 ```
 
 ### 20.Python中可以用如下方式表示正负无穷：
-float("inf"), float("-inf")
+
+float("inf")<br>  
+float("-inf")
 
 ### 21.Python split()方法
 Python 字符串 Python 字符串
@@ -236,9 +260,9 @@ Python split() 通过指定分隔符对字符串进行切片，如果参数 num 
 
 #### 语法
 split() 方法语法：
-
+```python
 str.split(str="", num=string.count(str)).
-
+```
 str -- 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。<br> 
 num -- 分割次数。默认为 -1, 即分隔所有。<br> 
 返回值:返回分割后的字符串列表。
@@ -256,33 +280,28 @@ sys.setrecursionlimit(100000) #例如这里设置为十万
 
 ### 23.Python 排序---sort与sorted学习
 当我们从数据库中获取一写数据后，一般对于列表的排序是经常会遇到的问题，今天总结一下python对于列表list排序的常用方法：
-
-第一种：内建方法sort()
-可以直接对列表进行排序
-
+#### 第一种：内建方法list.sort()可以直接对列表进行排序
 用法：
-
+```python
 list.sort(func=None, key=None, reverse=False(or True))
-
+```
 对于reverse这个bool类型参数，当reverse=False时：为正向排序；当reverse=True时：为方向排序。默认为False。
-执行完后会改变原来的list，如果你不需要原来的list，这种效率稍微高点
-为了避免混乱，其会返回none
+执行完后会改变原来的list，如果你不需要原来的list，这种效率稍微高点为了避免混乱，其会返回none
 例如：
-
->>> list = [2,8,4,6,9,1,3]
->>> list.sort()
->>> list
-[1, 2, 3, 4, 6, 8, 9]
- 
-
-第二种：内建函数sorted()
+```python
+list = [2,8,4,6,9,1,3]
+list.sort()
+print(list)
+```
+    [1, 2, 3, 4, 6, 8, 9]+
+#### 第二种：内建函数sorted()<br>
 这个和第一种的差别之处在于：
-
-sorted()不会改变原来的list，而是会返回一个新的已经排序好的list
-list.sort()方法仅仅被list所定义，sorted()可用于任何一个可迭代对象
+sorted()不会改变原来的list，而是会返回一个新的已经排序好的list<br>
+list.sort()方法仅仅被list所定义，sorted()可用于任何一个可迭代对象<br>
 用法：
-
+```python
 sorted(list)
+```
 
 该函数也含有reverse这个bool类型的参数，当reverse=False时：为正向排序(从小到大)；当reverse=True时：为反向排序(从大到小)。当然默认为False。
 执行完后会有返回一个新排序好的list
@@ -294,53 +313,52 @@ sorted(list)
 [1, 2, 3, 4, 5, 7, 8]
 
 ### 24.反转部分列表
+#### 方法1：切片法
+```python
 a = [1,2,3,4,5]
 a[0:3] = a[2::-1]   #work! 参数略复杂，[]中第一个参数是要反转的最后一个数的index，比如这里要翻转前三个数字 1 2 3，
                #那么第一个参数就是3的index，所以这里是2，第二个参数是要反转的第一个数的index，如果从第一个数开始那么可以省略
                #最后一个参数是-1，表示反序
 print(a)
 >>[3, 2, 1, 4, 5]
-
-reverse()：
-
-是python中列表的一个内置方法（也就是说，在字典，字符串或者元组中，是没有这个内置方法的），用于列表中数据的反转；
+```
+#### 方法2：list.reverse()
+list.reverse()：是python中列表的一个内置方法（也就是说，在字典，字符串或者元组中，是没有这个内置方法的），用于列表中数据的反转；
 exp：
-
+```python
 lista = [1, 2, 3, 4]
 lista.reverse()
 print(lista)
+```
 1
 2
 3
-打印结果：
-
-[4, 3, 2, 1]
+    打印结果：[4, 3, 2, 1]
 
 其实，lista.reverse() 这一步操作的返回值是一个None，其作用的结果，需要通过打印被作用的列表才可以查看出具体的效果。
 
-reversed()：
-而reversed()是python自带的一个方法，准确说，应该是一个类；
+#### 方法3：reversed()：
+而reversed()是python自带的一个方法，准确说，应该是一个类；<br>
 关于reversed()官方解释：
 
-reversed(sequence) -> reverse iterator over values of the sequence
-Return a reverse iterator
+>reversed(sequence) -> reverse iterator over values of the sequence
+>Return a reverse iterator
 
 translate it :
-reversed（sequence） - >反转迭代器的序列值
-返回反向迭代器
+>reversed（sequence） - >反转迭代器的序列值
+>返回反向迭代器
 
 也就是说，在经过reversed()的作用之后，返回的是一个把序列值经过反转之后的迭代器，所以，需要通过遍历，或者List,或者next()等方法，获取作用后的值；
 
 下面通过几个案例进行说明：
 1.列表的反转：
-
+```python
 bb = [1,3,5,7]
 print(list(reversed(bb)))
+```
 1
 2
-打印结果：
-
-[7, 5, 3, 1]
+    打印结果：[7, 5, 3, 1]
 
 ### 25.dic.get()方法
 get() 方法语法：
