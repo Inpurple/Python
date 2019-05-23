@@ -1,35 +1,37 @@
 Python 高效语法总结 
 ====
 
-#一级标题  
-##二级标题  
-###三级标题  
-####四级标题  
-#####五级标题  
-######六级标题  
-Python continue 语句跳出本次循环，而break跳出整个循环。
+# 1.Python continue 语句跳出本次循环，而break跳出整个循环。<br>  
 continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。
 continue语句用在while和for循环中。
 
-##2.	带索引的列表迭代 enumerate()  
-列表：
-
+## 2.	带索引的列表迭代 enumerate()  <br>  
+列表：<br>  
+```python
+teams=["Parkers","49ers","Ravens","Patriots"]
+for index,team in enumerate(teams):
+    print(index,team)
+```
  
-字典：对键和值都进行遍历
-如果只需要值，可以使用d.values，如果想获取所有的键则可以使用d.keys。
+字典：对键和值都进行遍历<br>  
+如果只需要值，可以使用d.values()，如果想获取所有的键则可以使用d.keys()。
 如果想获取键和值d.items方法会将键-值对作为元组返回，for循环的一大好处就是可以循环中使用序列解包。
-代码实例：
-1
-2
-3
-4
-5	for key, value in d.items():
-    print (key, ' value : ', value)
-name1 value : pythontab
-name2 value : .
-name3 value : com
 
-3.	Python标准库网址
+代码实例：<br>  
+```python
+d={
+name1: "pythontab",
+name2: ".",
+name3: "com"
+}
+for key, value in d.items():
+    print (key, ' value : ', value)
+```
+name1 value : pythontab<br>  
+name2 value : .<br> 
+name3 value : com<br> 
+
+3.	Python标准库网址<br> 
 https://docs.python.org/zh-cn/3/library/index.html
 
 4.	Python中的浅拷贝和深拷贝
