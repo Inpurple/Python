@@ -1,7 +1,12 @@
 Python 高效语法总结 
 ====
 
-#Python continue 语句<br>  
+#一级标题  
+##二级标题  
+###三级标题  
+####四级标题  
+#####五级标题  
+######六级标题  
 Python continue 语句跳出本次循环，而break跳出整个循环。
 continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。
 continue语句用在while和for循环中。
