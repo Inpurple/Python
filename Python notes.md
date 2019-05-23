@@ -175,7 +175,6 @@ print(pattern[1])---提示超出索引<br>
 #### list
 |Operation|Big-O Efficiency|
 |:---|:---|
-|列1的内容1|列2的内容1|
 |index [] | O(1)|
 |index assignment | O(1)|
 |append | O(1)|
@@ -196,7 +195,7 @@ multiply | O(nk)
 #### dic
 
 |操作|平均情况|最坏情况|
-|:---|:---|
+|:---|:---|:---|
 |复制|O(n)|O(n)|
 |取元素|O(1)|O(n)|
 |更改元素|O(1)|O(n)|
@@ -205,7 +204,7 @@ multiply | O(nk)
 
 #### set
 |操作|平均情况|最坏情况|
-|:---|:---|
+|:---|:---|:---|
 x in s|O(1)|O(n)
 并集|s|t|O(len(s)+len(t))	 
 交集|s&t|O(min(len(s), len(t))|O(len(s) * len(t))
