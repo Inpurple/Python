@@ -1,13 +1,14 @@
 Python 高效语法总结 
 ====
 
-1.	Python continue 语句
+#1.	Python continue 语句
 Python continue 语句跳出本次循环，而break跳出整个循环。
 continue 语句用来告诉Python跳过当前循环的剩余语句，然后继续进行下一轮循环。
 continue语句用在while和for循环中。
 
-2.	带索引的列表迭代 enumerate()  
+##2.	带索引的列表迭代 enumerate()  
 列表：
+
  
 字典：对键和值都进行遍历
 如果只需要值，可以使用d.values，如果想获取所有的键则可以使用d.keys。
