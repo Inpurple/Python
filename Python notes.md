@@ -1,4 +1,4 @@
-Python 高效语法总结 
+Python 语法总结 
 ====
 
 ### 1.Python continue 语句
@@ -94,57 +94,63 @@ def getTwoDimensionListIndex(L,value):
 ```
 s.index(x[, i[, j]])	x 在 s 中首次出现项的索引号（索引号在 i 或其后且在 j 之前）
 
-### 6.	不同于我用过的其它编程语言，Python 没有 switch / case 语句。为了实现它，我们可以使用字典映射：
+### 6.Python 没有 switch / case 语句
+不同于我用过的其它编程语言，Python 没有 switch / case 语句。为了实现它，我们可以使用字典映射：
 
-7.	Python中可以当做key值的数据类型：
-所以所有python自带类型中，除了list、dict、set和内部至少带有上述三种类型之一的tuple之外，其余的对象都能当key
+### 7.	Python中可以当做key值的数据类型：
+所有python自带类型中，除了list、dict、set和内部至少带有上述三种类型之一的tuple之外，其余的对象都能当key
 
-8.	可变类型和不可变类型
-不可变对象：该对象所指定内存中的值不可以被改变，在改变某个对象的值的时候，由于其内存中的值不可以被改变，所以，会把原来的值复制一份再进行改变，这样就会计算机会开辟一段新的内存空间来存储新的值，python 不可变对象有 int str float number,tuple,None
+### 8.	可变类型和不可变类型
+不可变对象：该对象所指定内存中的值不可以被改变，在改变某个对象的值的时候，由于其内存中的值不可以被改变，所以，会把原来的值复制一份再进行改变，这样就会计算机会开辟一段新的内存空间来存储新的值，python 不可变对象有 int str float number,tuple,None<br>  
+
 可变对象：该对象所指定的内存地址上面的值可以被改变，变量被改变后，其所指向的内存地址上面的值，直接被改变，没有发生复制行为，也没有发生开辟新的内存地址行为。python可变对象有，列表，字典，set集合
 
-9.	Python中在列表索引超出范围(这里：’’)时获得默认值。
-我如何做到这一点？在Python的“请求宽恕，不允许”的精神，这里有一种方法：
+### 9.	Python中在列表索引超出范围(这里：’’)时获得默认值。
+我如何做到这一点？在Python的“请求宽恕，不允许”的精神，这里有一种方法：<br> 
 try:
     b = a[4]
 except IndexError:
     b = ''
     
-10.	python中关于str与list的替换
+### 10.	python中关于str与list的元素替换
+
 字符串替换str.replace()方法
-python中的replace()方法是把字符串中的old字符串替换成new的字符串，如果指定替换次数max,则按照替换次数进行替换
-str.replace(old,new,count=0)
-old：字符串替换前的字符 
-new：字符串替换后的字符 
-count：替换的次数，默认为0，不填表示全局替换
+python中的replace()方法是把字符串中的old字符串替换成new的字符串，如果指定替换次数max,则按照替换次数进行替换<br> 
+str.replace(old,new,count=0)<br> 
+old：字符串替换前的字符 <br> 
+new：字符串替换后的字符 <br> 
+count：替换的次数，默认为0，不填表示全局替换<br> 
+
 列表替换直接用索引赋值法
 
-11.	字典序的理解
-设想一本英语字典里的单词，何者在前何者在后？
-显然的做法是先按照第一个字母、以 a、b、c……z 的顺序排列；如果第一个字母一样，那么比较第二个、第三个乃至后面的字母。如果比到最后两个单词不一样长（比如，sigh 和 sight），那么把短者排在前。
+### 11.	字典序的理解
+设想一本英语字典里的单词，何者在前何者在后？<br> 
+显然的做法是先按照第一个字母、以 a、b、c……z 的顺序排列；如果第一个字母一样，那么比较第二个、第三个乃至后面的字母。如果比到最后两个单词不一样长（比如，sigh 和 sight），那么把短者排在前。<br>
 通过这种方法，我们可以给本来不相关的单词强行规定出一个顺序。“单词”可以看作是“字母”的字符串，而把这一点推而广之就可以认为是给对应位置元素所属集合分别相同的各个有序多元组规定顺序。
 
-12.	python 字符相减得到数字
+### 12.	python 字符相减得到数字
 python中没有字符之间的直接相减运算，但可以通过ord()函数实现 
 ord()函数主要用来返回对应字符的ascii码
 >>> ord('9')-ord('0')
 9
 
-13.	如何删除二维数组的列
+### 13.	如何删除二维数组的列
+```python
 import numpy as np
 A = np.delete(A, 1, 0)  # delete second row of A
 B = np.delete(B, 2, 0)  # delete third row of B
 C = np.delete(C, 1, 1)  # delete second column of C
+```
 According to numpy's documentation page, the parameters for numpy.delete are as follow:
 numpy.delete(arr, obj, axis=None)
-•	arr refers to the input array,
-•	obj refers to which sub-arrays (e.g. column/row no. or slice of the array) and
-•	axis refers to either column wise (axis = 1) or row-wise (axis = 0) delete operation.
+* arr refers to the input array,
+* obj refers to which sub-arrays (e.g. column/row no. or slice of the array) and
+* axis refers to either column wise (axis = 1) or row-wise (axis = 0) delete operation.
 
-14.	SET的用法
+### 14.	SET的用法
 python的set和其他语言类似, 是一个无序不重复元素集, 基本功能包括关系测试和消除重复元素. 集合对象还支持union(联合), intersection(交), difference(差)和sysmmetric difference(对称差集)等数学运算.
 
-set的创建：
+#### set的创建：
 集合(set)
 a.set是一个无序不重复的序列
 
@@ -155,97 +161,99 @@ c.集合存放不可变类型（字符串、数字、元组）
 　　注意：创建一个空集合必须用 set( ) 而不是 { } ，因为 { } 是用来创建一个空字典 
 
  
-Python Set add()方法
+#### Python Set add()方法
 add() 方法用于给集合添加元素，如果添加的元素在集合中已存在，则不执行任何操作。
 语法
 add()方法语法：set.add(elmnt)
 
-15.	超出索引的返回值
-pattern="b"
-print(pattern[1:])—None
-print(pattern[1])---提示超出索引
+### 15.	超出索引的返回值
+pattern="b"<br>
+print(pattern[1:])—None<br>
+print(pattern[1])---提示超出索引<br>
 
-16.python list中方法的时间复杂度
-Operation	Big-O Efficiency
-index []	O(1)
-index assignment	O(1)
-append	O(1)
-pop()	O(1)
-pop(i)	O(n)
-insert(i,item)	O(n)
-del operator	O(n)
-iteration	O(n)
-contains (in)	O(n)
-get slice [x:y]	O(k)
-del slice	O(n)
-set slice	O(n+k)
-reverse	O(n)
-concatenate	O(k)
-sort	O(n log n)
-multiply	O(nk)
+### 16.python list中方法的时间复杂度
+Operation | Big-O Efficiency
+- | :-: | -: 
+index [] | O(1)
+index assignment | O(1)
+append | O(1)
+pop() | O(1)
+pop(i) | O(n)
+insert(i,item) | O(n)
+del operator | O(n)
+iteration | O(n)
+contains (in) | O(n)
+get slice [x:y] | O(k)
+del slice | O(n)
+set slice | O(n+k)
+reverse | O(n)
+concatenate | O(k)
+sort | O(n log n)
+multiply | O(nk)
 
-17. python ‘//’ 取整，‘%’ 取余
->>> 2/2   除法
-1.0
->>> 2//2  取整
-1
->>> 1/2   除法
-0.5
->>> 1//2  取整
-0
->>> 3//2  取整
-1
->>> 3%2  取余
-1
->>> 4%2  取余
-0
+### 17. python ‘//’ 取整，‘%’ 取余
+>>> 2/2   除法<br>  
+1.0<br>  
+>>> 2//2  取整<br>  
+1<br>  
+>>> 1/2   除法<br>  
+0.5<br>  
+>>> 1//2  取整<br>  
+0<br>  
+>>> 3//2  取整<br>  
+1<br>  
+>>> 3%2  取余<br>  
+1<br>  
+>>> 4%2  取余<br>  
+0<br>  
 
-18.list与str的呼唤
-对python 字符串中指定位置的字符做修改操作：
+### 18.list与str的呼唤
+对python 字符串中指定位置的字符做修改操作：<br>  
+```python
 str = list(str)
 str [0] = 'p'
 str = '.join(str)
-
-19. Python 字符串大小写转换
+```
+### 19. Python 字符串大小写转换
 以下代码演示了如何将字符串转换为大写字母，或者将字符串转为小写字母等：
+```Python
 str = "www.runoob.com"
 print(str.upper())          # 把所有字符中的小写字母转换成大写字母
 print(str.lower())          # 把所有字符中的大写字母转换成小写字母
 print(str.capitalize())     # 把第一个字母转化为大写字母，其余小写
 print(str.title())          # 把每个单词的第一个字母转化为大写，其余小写 
+```
 
-20.Python中可以用如下方式表示正负无穷：
+### 20.Python中可以用如下方式表示正负无穷：
 float("inf"), float("-inf")
 
-21.Python split()方法
+### 21.Python split()方法
 Python 字符串 Python 字符串
 
-描述
+#### 描述
 Python split() 通过指定分隔符对字符串进行切片，如果参数 num 有指定值，则分隔 num+1 个子字符串
 
-语法
+#### 语法
 split() 方法语法：
 
 str.split(str="", num=string.count(str)).
 
-参数
-str -- 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。
-num -- 分割次数。默认为 -1, 即分隔所有。
-返回值
-返回分割后的字符串列表。
+str -- 分隔符，默认为所有的空字符，包括空格、换行(\n)、制表符(\t)等。<br> 
+num -- 分割次数。默认为 -1, 即分隔所有。<br> 
+返回值:返回分割后的字符串列表。
 
-22.解决报错RecursionError: maximum recursion depth exceeded in comparison
+### 22.解决报错RecursionError: maximum recursion depth exceeded in comparison
 发现python默认的递归深度是很有限的（默认是1000），因此当递归深度超过999的样子，就会引发这样的一个异常。
-解决
+解决<br> 
 可以修改递归深度的值，让它变大大一点
-
+```python
 import sys   
 sys.setrecursionlimit(100000) #例如这里设置为十万  
-
-结语
+```
+结语<br> 
 这个解决方法并不治本，还需要在代码上进行优化。我出现这个错误的原因是忽略了对爬取页面的异常值处理，在增加判断之后，递归深度一般达不到python的默认限制。
 
-23.Python 排序---sort与sorted学习
+### 23.Python 排序---sort与sorted学习
 当我们从数据库中获取一写数据后，一般对于列表的排序是经常会遇到的问题，今天总结一下python对于列表list排序的常用方法：
 
 第一种：内建方法sort()
@@ -284,7 +292,7 @@ sorted(list)
 >>> other
 [1, 2, 3, 4, 5, 7, 8]
 
-24.反转部分列表
+### 24.反转部分列表
 a = [1,2,3,4,5]
 a[0:3] = a[2::-1]   #work! 参数略复杂，[]中第一个参数是要反转的最后一个数的index，比如这里要翻转前三个数字 1 2 3，
                #那么第一个参数就是3的index，所以这里是2，第二个参数是要反转的第一个数的index，如果从第一个数开始那么可以省略
@@ -333,7 +341,7 @@ print(list(reversed(bb)))
 
 [7, 5, 3, 1]
 
-25.dic.get()方法
+### 25.dic.get()方法
 get() 方法语法：
 
 D.get(key[,default=None])
