@@ -122,6 +122,18 @@ numpy.delete(arr, obj, axis=None)
 
 14.	SET的用法
 python的set和其他语言类似, 是一个无序不重复元素集, 基本功能包括关系测试和消除重复元素. 集合对象还支持union(联合), intersection(交), difference(差)和sysmmetric difference(对称差集)等数学运算.
+
+set的创建：
+集合(set)
+a.set是一个无序不重复的序列
+
+b.可以用 { } 或者 set( ) 函数创建集合
+
+c.集合存放不可变类型（字符串、数字、元组）
+
+　　注意：创建一个空集合必须用 set( ) 而不是 { } ，因为 { } 是用来创建一个空字典 
+
+ 
 Python Set add()方法
 add() 方法用于给集合添加元素，如果添加的元素在集合中已存在，则不执行任何操作。
 语法
