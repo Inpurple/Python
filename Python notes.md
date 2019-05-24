@@ -171,7 +171,7 @@ pattern="b"<br>
 print(pattern[1:])—""<br>
 print(pattern[1])---提示超出索引<br>
 
-pattern=["b"]
+pattern=["b"]<br>
 print(pattern[1:])—[]<br>
 print(pattern[1])---提示超出索引
 ### 16.python list中方法的时间复杂度
