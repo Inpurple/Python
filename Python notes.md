@@ -168,9 +168,12 @@ add()方法语法：set.add(elmnt)
 
 ### 15.	超出索引的返回值
 pattern="b"<br>
-print(pattern[1:])—None<br>
+print(pattern[1:])—""<br>
 print(pattern[1])---提示超出索引<br>
 
+pattern=["b"]
+print(pattern[1:])—[]<br>
+print(pattern[1])---提示超出索引
 ### 16.python list中方法的时间复杂度
 #### list
 |Operation|Big-O Efficiency|
@@ -369,4 +372,14 @@ default -- 可选参数，如果指定键的值不存在时，返回该值，默
 返回值<br>
 返回指定键的值，如果指定键的值不在字典中返回指定值，默认为 None。
 
+### 26.python 中 None，空字符串，空列表的区别：
+#### 1.区别:数据类型
+在python中是没有NULL的，取而代之的是None，它的含义是为空，但要注意和空列表与空字符串的区别，None的类型是Nonetype,""的类型是string，[]的类型是list.
+
+#### 2.共同点：判断皆为False
+```python
+type(None)
+>>><class 'NoneType'>
+```
+python是把0，空字符串‘ ’和None都看作False，把其他数值和非空字符串都看作True
 
