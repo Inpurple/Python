@@ -383,3 +383,9 @@ type(None)
 ```
 python是把0，空字符串‘ ’和None都看作False，把其他数值和非空字符串都看作True
 
+### 27.Python中if else简写出现"SyntaxError: can't assign to conditional expression"错误的解决方法将else后的“p1=”去掉
+
+Re:SyntaxError: can't assign to conditional expression
+
+原因在于，expression是表达式，就是加减乘除等各种运算符号联接起来的式子，是可以被求值的代码。Statement不总有值
+
