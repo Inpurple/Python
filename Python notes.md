@@ -389,3 +389,5 @@ Re:SyntaxError: can't assign to conditional expression
 
 原因在于，expression是表达式，就是加减乘除等各种运算符号联接起来的式子，是可以被求值的代码。Statement不总有值
 
+### 28.队列，其实就是一个先进先出的线性表，只能在队首执行删除操作，在队尾执行插入操作。用列表表示队列，可以用append()方法实现在队尾插入元素，用pop(0)方法实现在队首删除元素
+
