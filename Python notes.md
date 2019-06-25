@@ -374,8 +374,8 @@ default -- 可选参数，如果指定键的值不存在时，返回该值，默
 
 ### 26.python 中 None，空字符串，空列表的区别：
 #### 1.区别:数据类型
-在python中是没有NULL的，取而代之的是None，它的含义是为空，但要注意和空列表与空字符串的区别，None的类型是Nonetype,""的类型是string，[]的类型是list.
-
+在python中是没有NULL的，取而代之的是None，它的含义是为空，但要注意和空列表与空字符串的区别，None的类型是Nonetype,""的类型是string，[]的类型是list.<br>
+None≠[]≠""
 #### 2.共同点：判断皆为False
 ```python
 type(None)
