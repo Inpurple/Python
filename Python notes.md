@@ -36,7 +36,7 @@ for key, value in d.items():
     name3 value : com<br> 
 
 ### 3.	Python标准库网址
-https://docs.python.org/zh-cn/3/library/index.html
+https://docs.python.org/zh-cn/3/library/index.html 
 
 ### 4.	Python中的浅拷贝和深拷贝<br> 
 Python的切片操作是是浅拷贝<br> 
@@ -484,7 +484,7 @@ python的列表切片<br>
 如果字符串中至少有一个字符串并且所有的字符由数字组成，那么将返回True，否则返回False。
 
 #### 29.2检测字符串中是否由“数字”组成。<br>  ----包括正负
-     print(num不是整数)
+
 正则表达式法：
 ```python
  num = '-10'
