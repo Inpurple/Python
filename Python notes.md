@@ -477,5 +477,30 @@ python的列表切片<br>
 2、start和stop的正值代表列表下标，负值代表列表从左往右数起，倒数第几个数据。<br>  
 3、start和stop的空值分别代表列表的头尾的最后一个数据，至于start和stop空值的时候代表的是列表的头还是尾，由step的正负值决定，即由step确定列表切片的方向后决定。当step为正时，即代表从左往右切片，则start的空值代表左边的开头，stop的空值代表右边的结尾。当step为负值时，即代表从右往左切片，则start的空值代表右边的开头，stop的空值代表左边的结尾。当step为负时，start的空值代表
  
+### 29.Python isdigit()函数的使用方法 
 
+#### 29.1检测字符串中是否由“正数字”组成。<br>  ---正整数还是正数有待确认
+语法使用：str.isdigit()<br>  
+如果字符串中至少有一个字符串并且所有的字符由数字组成，那么将返回True，否则返回False。
+
+#### 29.2检测字符串中是否由“数字”组成。<br>  ----包括正负
+     print(num不是整数)
+正则表达式法：
+```python
+ num = '-10'
+ import re
+ if re.match(r'^-?(\.\d+|\d+(\.\d+)?)', num)：
+     print(num是整数)
+ else:
+     print(num不是整数)
+```
+
+更Pythonic的方法：
+```python
+ num = '-10'
+ if num.lstrip('-').isdigit():
+     print(num是整数)
+ else:
+     print(num不是整数)
+ ```
 
