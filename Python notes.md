@@ -420,21 +420,21 @@ list.count(obj)
 
 理解:
 
-　　#### 1.切片的step的值是正还是负，决定切片的方向：
-　　##### 1.1 即step为正数时（step>0），代表从左往右切片，即start下标值小于stop下标值，比如上面的列表，
+#### 1.切片的step的值是正还是负，决定切片的方向：
+##### 1.1 即step为正数时（step>0），代表从左往右切片，即start下标值小于stop下标值，比如上面的列表，
 ```python
 1 names=["bbguo","bbliang","bbxi","bbwang","bbbo","bbya","bbyi","bbqing"]
 2 print(names[1:5:2]) #step为2，大于0,从左往右切，从start开始（含start的值"bbliang"），stop结束（不含stop的值"bbya"）,语法逻辑要求start须小于stop才会认为语法正确，并执行切片操作，这里start=1,stop=5,start<stop,
 3 ['bbliang', 'bbwang'] #输出结果
 ```
-　　##### 1.2 当step为负数时（step<0），代表从右往左切片，即start下标值需要大于stop下标值，编译器才可以判断并执行切片操作。
+##### 1.2 当step为负数时（step<0），代表从右往左切片，即start下标值需要大于stop下标值，编译器才可以判断并执行切片操作。
 ``` python
 1 names=["bbguo","bbliang","bbxi","bbwang","bbbo","bbya","bbyi","bbqing"]
 2 print(names[5:1:-2]) #step为-2，小于0,从右往左执行切片，从start开始（含start的值“bbya”），stop结束（不含stop的值"bbliang"）,语法逻辑要求start须大于stop，编译器才会认为语法正确执行切片操作，这里start=5,stop=1,start>stop, 
 3  ['bbya', 'bbwang'] #输出结果
 ```
-　　#### 2、start、stop、step 为空值时的理解，空值得理解
-　　##### 2.1 start的空值，即start的第一个值，当step为正的时候，start的空值为下标0,stop的空值为下标7，这里这个例子就是：names[0] ；当step为负的时候，start的空值代表下标7，stop的空值代表下标0，列表的最后一个数据，即names[leng-1]， 即star和stop的空值代表列表的头和尾，依据step的是正还是负来颠倒，例子：<br>  
+#### 2、start、stop、step 为空值时的理解，空值得理解
+##### 2.1 start的空值，即start的第一个值，当step为正的时候，start的空值为下标0,stop的空值为下标7，这里这个例子就是：names[0] ；当step为负的时候，start的空值代表下标7，stop的空值代表下标0，列表的最后一个数据，即names[leng-1]， 即star和stop的空值代表列表的头和尾，依据step的是正还是负来颠倒，例子：<br>  
 step为1时：<br>  
 ```python
 1 names=["bbguo","bbliang","bbxi","bbwang","bbbo","bbya","bbyi","bbqing"]
@@ -448,24 +448,24 @@ step为-1时：<br>
 2 print(names[::-1]) #start 为 lenth(注意不是7，包含bbqing)，stop为0
 3 ['bbqing', 'bbyi', 'bbya', 'bbbo', 'bbwang', 'bbxi', 'bbliang', 'bbguo'] #输出结果
 ```
-　　##### 2.2 step的空值代表默认1。
+##### 2.2 step的空值代表默认1。
  
-　　#### 3、列表下标，以及切片时start,stop的负值的理解：
-　　##### 3.1 首先列表下标为负值时，即代表从列表右边数起来倒数第几个元素，比如names[-1]即代表，names这个列表右边第一个元素。例子如下：
+#### 3、列表下标，以及切片时start,stop的负值的理解：
+##### 3.1 首先列表下标为负值时，即代表从列表右边数起来倒数第几个元素，比如names[-1]即代表，names这个列表右边第一个元素。例子如下：
 ```python
 1 names=["bbguo","bbliang","bbxi","bbwang","bbbo","bbya","bbyi","bbqing"]
 2 print (names[-1]) #-1下标代表列表的倒数第一个元素，即右边第一个元素
 3 bbqing  #输出结果
 ```
 同理可以推出names[-2],names[-3]
-　　##### 3.2 切片的start和stop为负值时，无论step是正还是负，start和stop的负值都代表的是列表从左到右的倒数第几个元素。也就是说比如无论names[-1::1]、names[-1::-1]，names[:-1:1]、names[:-1:-1]，names[start]或者names[stop]的-1代表的都是names.这个列表中倒数第一个数据（bbqing），step正负这里只是用来判断切片的方向，继而查看切片的start和stop按照step的方向，是否有数据可以切片。当step>0时,比如step=1，由于names[-1::1]的start 位置以及是右边的倒数第一个数据了，即这个列表的最后一个数据，所以按照step正数向右切片，所以stop的空值也是这个数据，所以根据切片包含start的逻辑，而stop空值右包含最后一个数据，所以names[-1::1]输出结果将为bbqing。
+##### 3.2 切片的start和stop为负值时，无论step是正还是负，start和stop的负值都代表的是列表从左到右的倒数第几个元素。也就是说比如无论names[-1::1]、names[-1::-1]，names[:-1:1]、names[:-1:-1]，names[start]或者names[stop]的-1代表的都是names.这个列表中倒数第一个数据（bbqing），step正负这里只是用来判断切片的方向，继而查看切片的start和stop按照step的方向，是否有数据可以切片。当step>0时,比如step=1，由于names[-1::1]的start 位置以及是右边的倒数第一个数据了，即这个列表的最后一个数据，所以按照step正数向右切片，所以stop的空值也是这个数据，所以根据切片包含start的逻辑，而stop空值右包含最后一个数据，所以names[-1::1]输出结果将为bbqing。
 　　　　
 ```python
 1 names=["bbguo","bbliang","bbxi","bbwang","bbbo","bbya","bbyi","bbqing"]
 2 print (names[-1::1])
 3 ['bbqing'] #输出结果
 ```
-　　##### 3.3 当step为正，代表切片方向从左往右，如果切片的范围区间不正确，没有数据，输出结果将为空值。举例如下：
+##### 3.3 当step为正，代表切片方向从左往右，如果切片的范围区间不正确，没有数据，输出结果将为空值。举例如下：
 ```python
 1 names=["bbguo","bbliang","bbxi","bbwang","bbbo","bbya","bbyi","bbqing"]
 2 print(names[-4:5:-1]) #step-1,即代表从右往左切片，start值为-4，即右边倒数第四个数据（bbbo）,stop为5，即左边数起第小标5的数据(bbya),从bbo开始，bbya结束，不符合-1从右往左切片的方向要求，所以切片区间内没有值，输出空值。
