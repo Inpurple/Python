@@ -503,4 +503,28 @@ python的列表切片<br>
  else:
      print(num不是整数)
  ```
-
+ 
+### 30.dict()函数的使用方法 
+作用：dict() 函数用于创建一个字典。返回一个字典。<br>
+语法：<br>
+```python
+class dict(**kwarg)
+class dict(mapping, **kwarg)
+class dict(iterable, **kwarg)
+```
+参数说明：
+**kwargs -- 关键字<br>
+mapping -- 元素的容器。<br>
+iterable -- 可迭代对象<br>
+实例：
+```python
+1 >>>dict()                        # 创建空字典
+2 {}
+3 >>> dict(a='a', b='b', t='t')     # 传入关键字
+4 {'a': 'a', 'b': 'b', 't': 't'}
+5 >>> dict(zip(['one', 'two', 'three'], [1, 2, 3]))   # 映射函数方式来构造字典
+6 {'three': 3, 'two': 2, 'one': 1} 
+7 >>> dict([('one', 1), ('two', 2), ('three', 3)])    # 可迭代对象方式来构造字典
+8 {'three': 3, 'two': 2, 'one': 1}
+9 >>>
+```
