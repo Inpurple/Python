@@ -49,6 +49,15 @@ class BinaryTree(object):
                     queue.append(curnode.left)
                 if curnode.right!=None:
                     queue.append(curnode.right)
+
+    def deepth_travalsal(self,node):
+        if not node:
+            return
+        else:
+            print(node.value)
+            self.deepth_travalsal(node.left)
+            self.breadth_travelsal(node.right)
+            
 if __name__=="__main__":
     
     tree=BinaryTree()
