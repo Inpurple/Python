@@ -1,7 +1,7 @@
+
 # -*- coding: utf-8 -*-
 """
 Spyder Editor
-
 This is a temporary script file.
 """
 class Node(object):
@@ -44,7 +44,7 @@ class BinaryTree(object):
             queue=[self.root]
             while queue:
                 curnode=queue.pop(0)
-                print(curnode.value)
+                print(curnode.value,end=" ")#打印在一行
                 if curnode.left!=None:
                     queue.append(curnode.left)
                 if curnode.right!=None:
@@ -54,9 +54,9 @@ class BinaryTree(object):
         if not node:
             return
         else:
-            print(node.value)
+            print(node.value,end=" ")#打印在一行
             self.deepth_travalsal(node.left)
-            self.breadth_travelsal(node.right)
+            self. deepth_travalsal(node.right)
             
 if __name__=="__main__":
     
@@ -66,6 +66,13 @@ if __name__=="__main__":
     tree.add(2)
     tree.add(3)
     tree.add(4)
+    tree.add(5)
+    tree.add(6)
+    tree.add(7)
+    tree.add(8)
+    tree.add(9)
     tree.breadth_travelsal()
-                    
+    print(" ")#换行
+    tree.deepth_travalsal(tree.root)
+                        
         
