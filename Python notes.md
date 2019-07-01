@@ -217,7 +217,7 @@ s.difference_update(t)|O(len(t))
 s.symmetric_difference_update(t)|O(len(t))|O(len(t) * len(s))
 
 ### 17. python ‘//’ 取整，‘%’ 取余
-2/2   除法<br>  
+2/2   除法（用于py3，py2中需要将除数转化为浮点型）<br>  
 1.0<br>  
 2//2  取整<br>  
 1<br>  
