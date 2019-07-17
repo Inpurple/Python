@@ -150,6 +150,24 @@ numpy.delete(arr, obj, axis=None)
 ### 14.	SET的用法
 python的set和其他语言类似, 是一个无序不重复元素集, 基本功能包括关系测试和消除重复元素. 集合对象还支持union(联合), intersection(交), difference(差)和sysmmetric difference(对称差集)等数学运算.
 
+#### set方法对list去重：
+1.set(某list) 返回字典，也许和原来的列表顺序不一样。
+
+python 使用set对列表去重后，保持原来列表的顺序排列
+```python
+testlist = ['cc', 'bbbb', 'afa', 'sss', 'bbbb', 'cc', 'shafa']
+set2list = list(set(testlist))
+print set2list
+set2list.sort(key = testlist.index) 
+print set2list    
+```
+运行结果：
+
+['cc', 'shafa', 'bbbb', 'afa', 'sss']<br> 
+['cc', 'bbbb', 'afa', 'sss', 'shafa']
+
+
+
 #### set的创建：
 集合(set)
 a.set是一个无序不重复的序列
@@ -159,6 +177,7 @@ b.可以用 { } 或者 set( ) 函数创建集合
 c.集合存放不可变类型（字符串、数字、元组）
 
 　　注意：创建一个空集合必须用 set( ) 而不是 { } ，因为 { } 是用来创建一个空字典 
+
 
  
 #### Python Set add()方法
@@ -584,3 +603,23 @@ print "6 - c 的值为：", c
 5 - c 的值为： 240
 6 - c 的值为： 15
 ```
+### 33. python 计数器（counter）
+
+Counter是对字典类型的补充，用于追踪值的出现次数。
+
+ps：具备字典的所有功能 + 自己的功能
+
+ 
+
+把我写入的元素出现的多少次都计算出来
+```python
+import collections
+
+# 创建一个Counter对象
+obj = collections.Counter(‘ddccbbqqaaa‘)
+print(obj)
+
+```
+
+
+Counter({‘a‘: 3, ‘d‘: 2, ‘c‘: 2, ‘b‘: 2, ‘q‘: 2})#把我写入的元素出现的多少次都计算出来
