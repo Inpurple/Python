@@ -116,10 +116,22 @@ except IndexError:
 
 字符串替换str.replace()方法
 python中的replace()方法是把字符串中的old字符串替换成new的字符串，如果指定替换次数max,则按照替换次数进行替换<br> 
-str.replace(old,new,count=0)<br> 
+str.replace(old,new,count=0)----但是并未改变str<br> 
 old：字符串替换前的字符 <br> 
 new：字符串替换后的字符 <br> 
 count：替换的次数，默认为0，不填表示全局替换<br> 
+
+```python
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+
+        
+        print(s.replace(s[0],"_"))
+        print(s)
+```
+standout:<br> 
+_eetcode<br> 
+leetcode
 
 列表替换直接用索引赋值法
 
