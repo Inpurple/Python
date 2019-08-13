@@ -623,3 +623,9 @@ print(obj)
 
 
 Counter({‘a‘: 3, ‘d‘: 2, ‘c‘: 2, ‘b‘: 2, ‘q‘: 2})#把我写入的元素出现的多少次都计算出来
+
+
+### 34.python常见报错: IndentationError: unindent does not match any outer indentation level----
+检查包括注释在内，是否所有的都缩进在同一位置
+
+![image](https://github.com/Inpurple/Python-/blob/master/Python_sytax_attach/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20190813162754.png)
