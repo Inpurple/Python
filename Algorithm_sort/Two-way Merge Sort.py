@@ -6,13 +6,9 @@
 把长度为n的输入序列分成两个长度为n/2的子序列；
 对这两个子序列分别采用归并排序；
 将两个排序好的子序列合并成一个最终的排序序列。
---------------------- 
-作者：傻了吧嗒 
-来源：CSDN 
-原文：https://blog.csdn.net/weixin_41571493/article/details/81875088 
-版权声明：本文为博主原创文章，转载请附上博文链接！
+
+
 """
-    
 def merge(left,right,mid,nums):
     i=left
     j=mid+1
@@ -35,7 +31,7 @@ def merge(left,right,mid,nums):
         nums[left+k]=temp[k]
         
     
-def recur(left,right,nums):
+def recur(left,right,nums):#假设为两个有序的再合并为一个有序的
     if left>=right:
         return
     mid=(left+right)//2
